@@ -1,8 +1,8 @@
 console.log("Meerut Famous Kabab\nDay-Wise Online Menu Deals!!");
-let day = prompt("Day Name?");
+let day = prompt("Day Name?").toLowerCase();
+let budget = prompt("what is your Minimum Budget in PKR?");
 
-if (day == "Monday" || day == "monday" || day == "Tuesday" || day == "tuesday" || day == "Wednesday" || day == "wednesday" || day == "Thursday" || day == "thursday"){
-    let budget = prompt("what is your Minimum Budget in PKR?");
+if (day == "monday" || day == "tuesday" || day == "wednesday" || day == "thursday"){
     if (budget >= 1000){
         console.log("Live Deals!!");
         console.log("Deal 3:\n3 Beef Chutney Roll, 1 Chicken Tikka, 1 Puri Paratha and 4 Soft Drink 500ml\nPKR=1000");
@@ -17,8 +17,7 @@ if (day == "Monday" || day == "monday" || day == "Tuesday" || day == "tuesday" |
     }
 }
 
-else if (day == "Friday" || day == "friday" || day == "Saturday" || day == "saturday"){
-    let budget = prompt("what is your Minimum Budget in PKR?");
+else if (day == "friday" || day == "saturday"){
     if (budget >= 1000){
     console.log("Live Deals!!");
     console.log("Buffet:\n25+ dishes\nPKR=1000");
@@ -28,8 +27,7 @@ else if (day == "Friday" || day == "friday" || day == "Saturday" || day == "satu
     }
 }
 
-else if (day == "Sunday" || day == "sunday"){
-    let budget = prompt("what is your Minimum Budget in PKR?");
+else if (day == "sunday"){
     if (budget >= 500){
     let desserts = prompt("Do you want deals with desserts? Yes or No");
         if (desserts == "no" || desserts == "No"){
