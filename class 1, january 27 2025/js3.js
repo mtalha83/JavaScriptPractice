@@ -1,5 +1,5 @@
 
-let percentage = prompt ("Your Percentage?");
+let percentage = parseInt(prompt ("Your Percentage?"));
 
 // if (percentage < 0 || percentage > 100 || percentage == "-0"){
 //     console.log("invalid Number");}
@@ -29,15 +29,15 @@ let percentage = prompt ("Your Percentage?");
 // }
 
 switch(percentage){
-    case "90": console.log("A Grade")
+    case 90: console.log("A Grade")
     break;
-    case "80": console.log("B Grade")
+    case 80: console.log("B Grade")
     break;
-    case "70": console.log("C Grade")
+    case 70: console.log("C Grade")
     break;
-    case "60": console.log("D Grade")
+    case 60: console.log("D Grade")
     break;
-    case "50": console.log("F Grade")
+    case 50: console.log("F Grade")
     break;
     default: console.log("Invalid Number")
     break;
