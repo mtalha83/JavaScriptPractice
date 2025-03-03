@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+header, footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%;
+    background-color: black;    
+}
+
+
+.fixed{
+    position: fixed;
+    
+}
+
+.menu{
+    
+    padding-top: 135px;
+    
+}
+
+.up{
+    background-color: orange;
+    padding: 2px;
+}
+
+.org{
+    margin-top: 5px;
+    margin-left: 1280px  ;
+    padding: 5px;
+    color: black;
+}
+
+
+.nav_links, .navfoot_links{
+    list-style: none;
+}
+
+.nav_links li, .navfoot_links li{
+    display: inline-block;
+    padding: 0px 13px;
+    margin-right: 15px;
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+h2{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+
+.nav_links li a{
+    transition: 0.4s ease-in-out;
+}
+
+.nav_links li a:hover{
+    color: orange;
+}
+
+.up a{
+    transition: 0.2s ease-in-out;
+}
+
+.up a:hover{
+    color: white;
+}
+
+.navmain_links a{
+    color: black;
+}
+
+.navmain_links li{
+    display: inline-block;
+    padding: 5px 5px;
+    margin-right: 5px;
+}
+
+.navmain_links{
+    padding-left: 80px ;
+}
