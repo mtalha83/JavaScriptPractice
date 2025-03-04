@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Math Quiz</title>
+</head>
+<body>
+  <h2>Simple Math Quiz</h2>
+  <div id="quiz"></div>
+  <button id="actionButton" onclick="nextQuestion()">Next</button>
+  <div id="results"></div>
+
+  <script>
+    const questions = [
+      { question: 'What is 2 + 3?', choices: ['3', '5', '4', '6'], answer: '5' },
+      { question: 'What is 7 - 4?', choices: ['1', '2', '3', '5'], answer: '3' },
+      { question: 'What is 5 * 2?', choices: ['8', '9', '11', '10'], answer: '10' },
+      { question: 'What is 12 ÷ 3?', choices: ['4', '3', '2', '6'], answer: '4' },
+      { question: 'What is 9 + 1?', choices: ['8', '9', '10', '11'], answer: '10' },
+      { question: 'What is 15 - 6?', choices: ['7', '8', '9', '10'], answer: '9' },
+      { question: 'What is 3 * 3?', choices: ['6', '9', '8', '12'], answer: '9' },
+      { question: 'What is 8 ÷ 2?', choices: ['2', '3', '4', '5'], answer: '4' },
+      { question: 'What is 6 + 4?', choices: ['8', '9', '11', '10'], answer: '10' },
+      { question: 'What is 10 - 5?', choices: ['3', '4', '5', '6'], answer: '5' }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function showQuestion() {
+      const quizDiv = document.getElementById('quiz');
+      const q = questions[currentQuestion];
+      quizDiv.innerHTML = `<p>Question ${currentQuestion + 1}: ${q.question}</p>`;
+      for (let i = 0; i < q.choices.length; i++) {
+        const choice = q.choices[i];
+        quizDiv.innerHTML += `<input type='radio' name='answer' value='${choice}'> ${choice}<br>`;
+      }
+
+      const actionButton = document.getElementById('actionButton');
+      if (currentQuestion === questions.length - 1) {
+            actionButton.innerText = 'Submit';
+            } else {
+            actionButton.innerText = 'Next';
+        }
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (selected && selected.value === questions[currentQuestion].answer) {
+        score++;
+      }
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        if(score >= 6){
+        document.getElementById('quiz').innerHTML = '';
+        document.getElementById('results').innerText = `Congrats You are Passed..!!\nYou scored ${score} out of 10!`;
+        document.getElementById('actionButton').style.display = 'none';
+        }else{
+        document.getElementById('quiz').innerHTML = '';
+        document.getElementById('results').innerText = `Fail, Better luck next time..!\nYou scored ${score} out of 10!`;
+        document.getElementById('actionButton').style.display = 'none';
+        }
+      }
+    }
+
+    showQuestion();
+  </script>
+</body>
+</html>
