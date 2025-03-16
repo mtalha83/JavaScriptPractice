@@ -1,0 +1,200 @@
+/* 
+    .heading{
+        text-align: center;
+        height: 40px;
+        width: 330px;
+        margin-top: 25px;
+        margin-left: 500px;
+        border-radius: 20px;
+        background-color: black;
+        color: orange;
+        box-shadow: 5px 5px 15px gray;}
+
+.container-items{
+    text-align: center;
+    background-color: orange;
+    height: 430px;
+    width: 330px;
+    margin-top: 20px;
+    margin-left: 500px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px gray;}
+
+    .search input{
+        background-color: black;
+        color: orange;
+        height: 25px;
+        width: 150px;
+        margin-top: 20px;
+        margin-left: 15px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px gray;} 
+
+        .search button{
+            background-color: black;
+            color: orange;
+            height: 25px;
+            width: 55px;
+            margin-top: 20px;
+            margin-left: 0px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px gray;} 
+
+            h2{
+                text-align: center;
+                height: 40px;
+                width: 330px;
+                margin-top: 25px;
+                background-color: black;
+                color: orange;
+                margin-left: 0px;
+                border-radius: 20px;
+                box-shadow: 5px 5px 15px gray;} */
+
+
+/* General reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full height for centering */
+    flex-direction: column;
+    color: #fff; /* Default text color */
+}
+
+header {
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    height: 50px; /* Slightly smaller */
+    width: 350px; /* Smaller width */
+    margin: 15px 0; /* Reduced margin */
+    border-radius: 25px; /* Slightly rounded */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #ff8c42; /* Brighter orange */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    font-size: 24px; /* Slightly smaller font */
+    font-weight: bold;
+    line-height: 50px; /* Vertically center text */
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.container-items {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    height: auto; /* Adjust height based on content */
+    width: 350px; /* Smaller width */
+    margin: 15px 0; /* Reduced margin */
+    border-radius: 25px; /* Slightly rounded */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    padding: 20px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: flex-start; /* Align content to the top */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    gap: 10px; /* Reduced spacing between elements */
+    width: 100%;
+}
+
+.search input {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #fff; /* White text */
+    height: 40px; /* Slightly smaller */
+    width: 100%; /* Full width of container */
+    border-radius: 12px; /* Slightly rounded */
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    padding: 8px 16px; /* Reduced padding */
+    font-size: 16px; /* Slightly smaller font */
+    outline: none; /* Remove default focus outline */
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+}
+
+.search input:focus {
+    background: rgba(255, 255, 255, 0.3); /* Brighter on focus */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on focus */
+}
+
+.search button {
+    background: #ff8c42; /* Brighter orange */
+    color: #1a1a1a; /* Darker black */
+    height: 40px; /* Slightly smaller */
+    width: 100px; /* Smaller width */
+    border-radius: 12px; /* Slightly rounded */
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    cursor: pointer; /* Indicate clickable */
+    font-size: 16px; /* Slightly smaller font */
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s; /* Smooth hover effect */
+}
+
+.search button:hover {
+    background: #ff6f00; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.cityName,
+.temp,
+.windSpeed,
+.humidity,
+.cloudCondition {
+    color: #fff; /* White text */
+    font-size: 18px; /* Slightly smaller font */
+    font-weight: bold;
+    margin: 8px 0; /* Reduced spacing between elements */
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Weather icons or additional styling */
+.temp {
+    font-size: 28px; /* Slightly smaller font for temperature */
+    color: #ff8c42; /* Brighter orange */
+}
+
+.cloudCondition {
+    font-style: italic; /* Italicize for a stylistic touch */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .heading,
+    .container-items {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .search input {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .search button {
+        width: 80px; /* Smaller button for mobile */
+    }
+}

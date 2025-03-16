@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); 
+      color: #fff; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; 
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ff8c42; 
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+
+    #quiz {
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(10px); 
+      border-radius: 15px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
+      border: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+
+    #quiz p {
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    #quiz input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.2); 
+    }
+
+    #quiz label {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.3s; 
+    }
+
+    #quiz label:hover {
+      color: #ff8c42; 
+    }
+
+    button {
+      background: #ff8c42; 
+      color: #1a1a1a; 
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s; 
+      display: block;
+      margin: 20px auto 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+
+    button:hover {
+      background: #ff6f00; 
+      transform: translateY(-2px); 
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+  
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      #quiz {
+        padding: 15px;
+      }
+
+      #quiz p {
+        font-size: 18px;
+      }
+
+      #quiz label {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Math Quiz</h1>
+    <div id="quiz"></div>
+    <button id="actionButton">Next</button>
+  </div>
+
+  <script>
+    const questions = [
+      { question: 'What is 2 + 3?', choices: ['3', '5', '4', '6'], answer: '5' },
+      { question: 'What is 7 - 4?', choices: ['1', '2', '3', '5'], answer: '3' },
+      { question: 'What is 5 * 2?', choices: ['8', '9', '11', '10'], answer: '10' },
+      { question: 'What is 12 ÷ 3?', choices: ['4', '3', '2', '6'], answer: '4' },
+      { question: 'What is 9 + 1?', choices: ['8', '9', '10', '11'], answer: '10' },
+      { question: 'What is 15 - 6?', choices: ['7', '8', '9', '10'], answer: '9' },
+      { question: 'What is 3 * 3?', choices: ['6', '9', '8', '12'], answer: '9' },
+      { question: 'What is 8 ÷ 2?', choices: ['2', '3', '4', '5'], answer: '4' },
+      { question: 'What is 6 + 4?', choices: ['8', '9', '11', '10'], answer: '10' },
+      { question: 'What is 10 - 5?', choices: ['3', '4', '5', '6'], answer: '5' }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function showQuestion() {
+      const quizDiv = document.getElementById('quiz');
+      const q = questions[currentQuestion];
+      quizDiv.innerHTML = `<p>Question ${currentQuestion + 1}: ${q.question}</p>`;
+      q.choices.forEach((choice, index) => {
+        quizDiv.innerHTML += `
+          <label>
+            <input type='radio' name='answer' value='${choice}'>
+            ${choice}
+          </label>
+        `;
+      });
+
+      const actionButton = document.getElementById('actionButton');
+      if (currentQuestion === questions.length - 1) {
+        actionButton.innerText = 'Submit';
+      } else {
+        actionButton.innerText = 'Next';
+      }
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (!selected) {
+        alert('Please select an answer before proceeding.');
+        return;
+      }
+
+      if (selected.value === questions[currentQuestion].answer) {
+        score++;
+      }
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        localStorage.setItem('quizScore', score);
+        window.location.href = 'results1.html';
+      }
+    }
+
+    document.getElementById('actionButton').addEventListener('click', nextQuestion);
+
+    showQuestion();
+  </script>
+</body>
+</html>
